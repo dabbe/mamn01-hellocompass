@@ -121,8 +121,8 @@ public class CompassView extends SurfaceView implements SurfaceHolder.Callback {
         canvas.drawCircle(width / 2f, height / 2f, radius, backgroundPaint);
         canvas.rotate(deg, width/2f, height/2f);
         for (int i = 0; i < 4; i++) {
-            canvas.drawLine(width / 2f, height / 2f + radius, width / 2f, height / 2f + radius - height * 0.05f, linePaint);
-            canvas.drawText(cardinalShort[i], width / 2f - middlePaint.measureText(cardinalShort[i]) / 2, height / 2f + radius - height * 0.08f, middlePaint);
+            canvas.drawLine(width / 2f, height / 2f - radius, width / 2f, height / 2f - radius + height * 0.05f, linePaint);
+            canvas.drawText(cardinalShort[i], width / 2f - middlePaint.measureText(cardinalShort[i]) / 2, height / 2f - radius + height * 0.08f, middlePaint);
             canvas.rotate(360 / 4, width / 2f, height / 2f);
         }
         for (int i = 0; i < 32; i++) {
@@ -134,7 +134,5 @@ public class CompassView extends SurfaceView implements SurfaceHolder.Callback {
         canvas.drawPath(topPath, topPathPaint);
         canvas.drawPath(botPath, botPathPaint);
         canvas.drawCircle(width / 2f, height / 2f, width / 25f, middlePaint);
-        canvas.drawText(deg + " degrees", 500, 500, paint);
-
     }
 }
