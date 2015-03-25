@@ -12,6 +12,6 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(new CompassView(this));
+        setContentView(new CompassView(this, new Compass(this)));
     }
 }
