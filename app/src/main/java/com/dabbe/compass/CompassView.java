@@ -114,12 +114,15 @@ public class CompassView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     public void drawCompass(Canvas canvas) {
-
-        canvas.save();
+       /* float oldDeg = deg;
+        float tmp = compass.getDegrees() - oldDeg;
+        if (Math.abs(tmp) < 1.5f) tmp = 0;
+        deg = (oldDeg + (tmp) * 0.1f)%360;*/
         float deg = compass.getDegrees();
+        canvas.save();
         canvas.drawColor(Color.BLACK);
         canvas.drawCircle(width / 2f, height / 2f, radius, backgroundPaint);
-        canvas.rotate(-deg, width/2f, height/2f);
+        canvas.rotate(-deg, width / 2f, height / 2f);
         for (int i = 0; i < 4; i++) {
             canvas.drawLine(width / 2f, height / 2f - radius, width / 2f, height / 2f - radius + height * 0.05f, linePaint);
             canvas.drawText(cardinalShort[i], width / 2f - middlePaint.measureText(cardinalShort[i]) / 2, height / 2f - radius + height * 0.08f, middlePaint);
